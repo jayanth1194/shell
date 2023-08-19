@@ -1,5 +1,5 @@
 #!/bin/bash 
 
 echo " enter your salary here :"
-read SALARY 
+read -p SALARY 
 echo " jayant salary is : $SALARY"
