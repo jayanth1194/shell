@@ -11,6 +11,7 @@ DATE=$(date +%F)
 LOG_FILE=/tmp/$0-$DATE.log
 USERID=$(id -u)
 
+PACKAGE_STATUS=rpm -q  | awk -F  '-' '{print $1}'
 
 
 VALIDATE(){
@@ -29,9 +30,19 @@ then
     exit 2
 fi 
 
+
+
+
+
 for i in $@
 do 
+    PACKAGE_STATUS=rpm -q $i | awk -F  '-' '{print $1}'
+    if [$PACKAGE_STATUS== $i]
+    then 
+        echo " application is installed already "
+    else 
     yum install $i -y  &>>$LOG_FILE
     VALIDATE $i
+    fi
 done
 
