@@ -5,12 +5,12 @@
 USERID=$(id -u)
 
 VALIDATE(){
-    if [ $? -ne 0 ]
+    if [ $1 -ne 0 ]
     then
-        echo " installation is wrong "
+        echo " installation of $2 is error  "
         exit 1
     else 
-        echo " installation is done"
+        echo " installation of $2 is done"
     fi
 }
 
@@ -27,4 +27,4 @@ VALIDATE(){
 
 yum install postfix -y 
 
-VALIDATE
+VALIDATE $? "POSTFIX"
