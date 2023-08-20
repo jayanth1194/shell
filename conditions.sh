@@ -2,8 +2,7 @@
 
 
 
-echo "Enter the number here :" 
-read -s NUMBER
+NUMBER=$1
 
 if [ $NUMBER -gt 10]
 then
