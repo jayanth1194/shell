@@ -26,6 +26,6 @@ echo "your running the script : $0"
 
 
 
-yum install postfix -y &>>$LOG_FILE
+yum install postfix -y &>> $LOG_FILE
 
 VALIDATE $? "POSTFIX"
