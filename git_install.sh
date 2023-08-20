@@ -1,8 +1,8 @@
 #!/bin/bash 
 
+USER-D=$(id -u)
 
-
-if [ $(whoami)=='root' ] then 
+if [ $USERID -eq 0 ] then 
     echo " u r in root "
     yum install git -y
     if  [ $? -eq 0 ] then 
