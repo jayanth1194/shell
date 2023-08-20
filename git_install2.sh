@@ -25,6 +25,12 @@ VALIDATE(){
 #     echo " install of nginx is success"
 # fi 
 
+
+
+echo "your running the script : $0"
+
+
+
 yum install postfix -y 
 
 VALIDATE $? "POSTFIX"
