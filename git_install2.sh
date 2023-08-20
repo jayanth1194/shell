@@ -15,4 +15,6 @@ if [ $? -ne 0 ]
 then 
     echo " exit status is not zero "
     exit 2
+else 
+    echo " install of nginx is success"
 fi 
