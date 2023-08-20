@@ -4,7 +4,7 @@
 DATE=$(date +%F)
 USERID=$(id -u)
 SCRIPT_NAME=$0
-LOG_FILE=/tmp/$SCRIPT_NAME/$DATE.log 
+LOG_FILE=/tmp/$SCRIPT_NAME-$DATE.log 
 
 
 
@@ -26,6 +26,6 @@ echo "your running the script : $0"
 
 
 
-yum install postfix -y &>> $LOG_FILE
+yum install postfix -y &>>$LOG_FILE
 
 VALIDATE $? "POSTFIX"
