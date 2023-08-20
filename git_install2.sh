@@ -9,6 +9,10 @@ then
     echo " need sudo access"
     exit 1
 fi 
-yum install nginx -y 
+yum install nginxss -y 
 
-echo "$?"
+if [ $? -ne 0 ]
+then 
+    echo " exit status is not zero "
+    exit 2
+fi 
