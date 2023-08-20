@@ -4,11 +4,17 @@
 
 USERID=$(id -u)
 
-if [ $USERID -ne 0 ] 
-then
-    echo " need sudo access"
-    exit 1
-fi 
+VALIDATE(){
+    if [ $? -ne 0 ]
+    then
+        echo " installation is wrong "
+        exit 1
+    else 
+        echo " installation is done"
+    fi
+}
+
+
 # yum install nginxss -y 
 
 # if [ $? -ne 0 ]
@@ -21,10 +27,4 @@ fi
 
 yum install postfix -y 
 
-if [ $? -ne 0 ]
-then 
-    echo " error of installing postfix "
-    exit 2
-else 
-    echo " postfix is installed "
-fi 
+VALIDATE
