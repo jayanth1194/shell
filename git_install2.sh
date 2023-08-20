@@ -12,10 +12,10 @@ LOG_FILE=/tmp/$SCRIPT_NAME-$DATE.log
 VALIDATE(){
     if [ $1 -ne 0 ]
     then
-        echo " installation of $2 is error  "
+        echo  -e " installation of $2 is" "\e[31m error  "
         exit 1
     else 
-        echo " installation of $2 is done"
+        echo " installation of $2 is "  "\e[32m done"
     fi
 }
 
