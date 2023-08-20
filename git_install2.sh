@@ -9,6 +9,6 @@ then
     echo " need sudo access"
     exit 1
 fi 
-yum install git -y 
+yum install nginx -y 
 
 echo "$?"
