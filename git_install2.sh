@@ -1,8 +1,13 @@
 #!/bin/bash 
 
 
-
+DATE=$(date +%F)
 USERID=$(id -u)
+SCRIPT_NAME=$0
+LOG_FILE=/tmp/$SCRIPT_NAME/$DATE.log 
+
+
+
 
 VALIDATE(){
     if [ $1 -ne 0 ]
@@ -15,22 +20,12 @@ VALIDATE(){
 }
 
 
-# yum install nginxss -y 
-
-# if [ $? -ne 0 ]
-# then 
-#     echo " exit status is not zero "
-#     exit 2
-# else 
-#     echo " install of nginx is success"
-# fi 
-
 
 
 echo "your running the script : $0"
 
 
 
-yum install postfix -y 
+yum install postfix -y &>>$LOG_FILE
 
 VALIDATE $? "POSTFIX"
