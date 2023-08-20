@@ -6,10 +6,32 @@
 # for var in list 
 # do 
 #     your code 
-# done
+# do
+DATE=$(date +%F)
+LOG_FILE=/tmp/$0-$DATE.log
+USERID=$(id -u)
 
 
-for i in {1..100}
+
+VALIDATE(){
+    if  [ $? -ne 0 ]
+    then 
+        echo " installation of $1 is Failure"
+        exit 1
+    else 
+        echo " installation of $1 is  Success"
+    fi 
+}
+
+if  [ $USERID -ne  0 ]
+then 
+    echo "this require sudo access"
+    exit 2
+fi 
+
+for i in $@
 do 
-    echo $i
+    yum install $i -y  &>>$LOG_FILE
+    VALIDATE $i
 done
+
