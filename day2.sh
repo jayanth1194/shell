@@ -3,4 +3,4 @@
 
 
 MODELS=("wsa","Portal","Live")
-echo "first model is :$MODELS[0] "
+echo "first model is :${MODELS[0]} "
