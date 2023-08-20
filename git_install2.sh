@@ -27,3 +27,4 @@ then
     exit 2
 else 
     echo " postfix is installed "
+fi 
