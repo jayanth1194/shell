@@ -18,3 +18,12 @@ then
 else 
     echo " install of nginx is success"
 fi 
+
+yum install postfix -y 
+
+if [ $? -ne 0 ]
+then 
+    echo " error of installing postfix "
+    exit 2
+else 
+    echo " postfix is installed "
