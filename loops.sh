@@ -41,8 +41,8 @@ do
     then 
         echo " application is installed already "
     else 
-    yum install $i -y  &>>$LOG_FILE
-    VALIDATE $i
+        yum install $i -y  &>>$LOG_FILE
+        VALIDATE $i
     fi
 done
 
