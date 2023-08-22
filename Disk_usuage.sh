@@ -19,11 +19,12 @@ do
     TYPE=$(echo $line | awk -F ' ' '{print $1}')
     if [ $USUAGE -gt  12 ]
     then 
-    message="HIGH DISK USUAGE OF $TYPE : $USUAGE"
-    echo "$message"
+    message+="HIGH DISK USUAGE OF $TYPE : $USUAGE"
+    
     fi 
 
 done <<< $DISK_STORGE
 
+echo "$message "|mail -s "DISK " jayantjae@gmail.com
 
 
