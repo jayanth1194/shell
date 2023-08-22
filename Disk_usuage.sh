@@ -20,5 +20,7 @@ do
     echo 'HIGH DISK USUAGE OF $TYPE : $USUAGE'
     fi 
 
-done
+done <<< $DISK_STORGE
+
+
 
