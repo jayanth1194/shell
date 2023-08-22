@@ -20,6 +20,7 @@ do
     if [ $USUAGE -gt  12 ]
     then 
     message="HIGH DISK USUAGE OF $TYPE : $USUAGE"
+    echo "$message"
     fi 
 
 done <<< $DISK_STORGE
