@@ -25,6 +25,8 @@ do
 
 done <<< $DISK_STORGE
 
-echo "$message "|mail -s "DISK " jayantjae@gmail.com
+#echo "$message "|mail -s "DISK " jayantjae@gmail.com
+
+sh mail.sh jayantjae@gmail.com $message "DISK USUAGE" "DISK" "QA"
 
 
