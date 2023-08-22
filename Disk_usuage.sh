@@ -14,7 +14,7 @@ while read line
 do 
 
     USUAGE=$(echo $line | awk -F ' ' '{print $6}'| cut -d "%" -f1)
-')
+
     TYPE=$(echo $line | awk -F ' ' '{print $1}')
     if [ $USUAGE -gt  12 ]
     then 
