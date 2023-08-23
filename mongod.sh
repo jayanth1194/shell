@@ -1,6 +1,6 @@
 #!/bin/bash 
 
-LOG=/tmp/$NAME-$DATE.log 
+LOG=/tmp/$NAME_$DATE.log 
 NAME=$0
 DATE=$(date +%F)
 ID=$(id -u)
@@ -33,24 +33,24 @@ VALIDATE(){
 
 
 cp mongo.repo /etc/yum.repos.d/mongo.repo
-VALIDATE " copying the  mongo files " &>> $LOG
+VALIDATE " copying the  mongo files " 
 
 yum install mongodb-org -y
 
-VALIDATE " installing mongoDb " &>> $LOG
+VALIDATE " installing mongoDb " 
 
 systemctl enable mongod
-VALIDATE " ebabling mongod " &>> $LOG
+VALIDATE " enabling mongod " 
 
 
 systemctl start mongod
 
-VALIDATE " starting mongod " &>> $LOG
+VALIDATE " starting mongod " 
 
 sed -i "s/127.0.0.1/0.0.0.0/" /etc/mongod.conf
 
 
-VALIDATE "changing to all networks" &>> $LOG
+VALIDATE "changing to all networks" 
 
 systemctl restart mongod
 
