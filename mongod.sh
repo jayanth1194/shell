@@ -1,7 +1,8 @@
 #!/bin/bash 
 
-
-
+LOG=/tmp/$NAME-$DATE.log 
+NAME=$0
+DATE=$(date +%F)
 ID=$(id -u)
 
 if [ $ID -ne 0 ]
@@ -10,11 +11,20 @@ then
     exit 1
 fi 
 
+
+
+
+
+
+
+
+
+
 VALIDATE(){
 
-    if [$? -ne 0 ]
+    if [ $? -ne 0 ]
     then
-        echo " $2 ..... FAILURE"
+        echo " $2 ..... FAILURE" 
         exit 1
     else 
         echo "$2 ..... SUCCESS"
