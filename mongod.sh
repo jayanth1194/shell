@@ -1,10 +1,11 @@
 #!/bin/bash 
 
-LOG=/tmp/$NAME_$DATE.log 
+LOG=/tmp
+
 NAME=$0
 DATE=$(date +%F)
 ID=$(id -u)
-
+LOG_FILE=$LOG/$NAME-$DATE.log
 if [ $ID -ne 0 ]
 then 
     echo " need root access"
@@ -24,10 +25,10 @@ VALIDATE(){
 
     if [ $? -ne 0 ]
     then
-        echo " $2 ..... FAILURE" 
+        echo " $1 ..... FAILURE" 
         exit 1
     else 
-        echo "$2 ..... SUCCESS"
+        echo "$1 ..... SUCCESS"
     fi 
 }
 
